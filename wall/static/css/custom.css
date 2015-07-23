@@ -1,0 +1,27 @@
+.deploy {
+	float;
+    width: 100%;
+    padding-bottom: 50%; /* = width for a 1:1 aspect ratio */
+    margin:1.66%;
+    overflow:hidden;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #E9D7D7;
+}
+
+body {
+
+	background-color:#343434;
+	color:#E9D7D7;
+	font-size:20px;
+}
+
+#pilot {
+	background-color:#1A8831;
+	font-color:#E9D7D7;
+}
+
+#prod {
+	background-color:#CB2B2D;
+	font-color:#E9D7D7;
+}
