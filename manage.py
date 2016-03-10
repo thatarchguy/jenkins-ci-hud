@@ -22,33 +22,33 @@ def createdb():
     os.system('python manage.py db migrate')
     os.system('python manage.py db upgrade')
     ci = models.ContinuousBuilds(
-    name = 'JOB-Tests',
-    number = 1,
-    phase =  'STARTED',
-    status =  '',
-    sourceBranch =  'feature',
-    targetBranch = 'pilot',
-    full_url = 'http://jenkins:8080/job/JOB-TESTS/1/',
-    date_added = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        name='JOB-Tests',
+        number=1,
+        phase='STARTED',
+        status='',
+        sourceBranch='feature',
+        targetBranch='pilot',
+        full_url='http://jenkins:8080/job/JOB-TESTS/1/',
+        date_added=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     )
     deployPilot = models.Deployments(
-    name = 'JOB-Pilot',
-    number = 1,
-    phase =  'STARTED',
-    status =  '',
-    sourceBranch =  'pilot',
-    full_url = 'http://jenkins:8080/job/JOB-Pilot/1/',
-    date_added = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        name='JOB-Pilot',
+        number=1,
+        phase='STARTED',
+        status='',
+        sourceBranch='pilot',
+        full_url='http://jenkins:8080/job/JOB-Pilot/1/',
+        date_added=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     )
     deployProd = models.Deployments(
-    name = 'JOB-Prod',
-    number = 1,
-    phase =  'FINALIZED',
-    status =  'SUCCESS',
-    sourceBranch =  'master',
-    full_url = 'http://jenkins:8080/job/JOB-Prod/1/',
-    date_added = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-    date_modified = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        name='JOB-Prod',
+        number=1,
+        phase='FINALIZED',
+        status='SUCCESS',
+        sourceBranch='master',
+        full_url='http://jenkins:8080/job/JOB-Prod/1/',
+        date_added=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        date_modified=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     )
     db.session.add(ci)
     db.session.add(deployPilot)
@@ -82,4 +82,3 @@ def clean():
 
 if __name__ == "__main__":
     manager.run()
-
